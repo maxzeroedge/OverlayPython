@@ -65,22 +65,22 @@ for f in fileList:
 
 newimg = Image.new('RGB',(imList[0].size[0], imList[0].size[1]))
 
-for x in range(0, imList[0].size[0]-1):
+for x in range(0, imList[0].size[0]):
 	temp = []
-	for y in range(0, imList[1].size[1]-1):
+	for y in range(0, imList[1].size[1]):
 		temp.append(0)
 	newdat.append(temp)
-for i in range(0, len(imList) - 1):
+for i in range(0, len(imList)):
 	im = imList[i]
-	for x in range(0, im.size[0]-1):
-		for y in range(0, im.size[1]-1):
+	for x in range(0, im.size[0]):
+		for y in range(0, im.size[1]):
 			# Compare pixels at x,y
 			coord = x,y
 			if im.getpixel(coord) != (255,255,255) :
 					newdat[x][y] += 1
 					
-for x in range(0,len(newdat) - 1):
-	for y in range(0, len(newdat[x]) - 1):
+for x in range(0,len(newdat) ):
+	for y in range(0, len(newdat[x])):
 		color = newdat[x][y]
 		coord = x,y
 		newimg.putpixel(coord, getColor(color))
