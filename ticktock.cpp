@@ -55,6 +55,7 @@ int main(){
 
 int sum(int start, int end, string symbol, string field){
 	bool running = false;
+    int sum = 0;
 	for(int i = 0; i < cases; i++){
 		if(!running){
 			if(t[i].ts == start){	running = true;}
@@ -63,6 +64,7 @@ int sum(int start, int end, string symbol, string field){
 		if(running){
 			if(t[i].symbol == symbol){
 				//Add the values of fields here by finding index of field in t[i].fields and value of field in t[i].values at the index
+                 sum+=t[i].values[t[i].field.find(field)];
 			}
 		}
 	}
